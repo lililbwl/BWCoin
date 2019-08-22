@@ -20,6 +20,9 @@ A BlockChain App base on JavaScript and Browser
 #### NodeJS >8.0.0
 #### Electron-5.0.7
 
+## 界面展示
+![程序首页](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+u=702257389,1274025419&fm=27&gp=0.jpg "程序首页")
 
 ## 如何run
 1.克隆仓库代码
