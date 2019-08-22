@@ -1,0 +1,23 @@
+{
+  "name": "blockchainmaster",
+  "version": "1.0.0",
+  "description": "the simple blockchain example on nodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "no"
+  },
+  "keywords": [
+    "no"
+  ],
+  "author": "liubowen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0",
+    "crypto": "^1.0.1"
+  }
+}
