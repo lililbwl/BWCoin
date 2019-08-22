@@ -116,9 +116,9 @@ function BlockChain(){
   	}
   	return blockchainObj;
 }
+
+
 //设置所有请求允许跨域
-
-
 app.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
@@ -128,6 +128,7 @@ app.all('*', function(req, res, next) {
   if(req.method=="OPTIONS") res.send(200);/*让options请求快速返回*/
   else  next();
 });
+
 //创建区块链
 var BWCoin;
 var coinCon = fs.readFileSync('CB.json','utf-8');
@@ -148,6 +149,7 @@ server.listen(port, () => {
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/', function(req, res){
     
@@ -182,7 +184,7 @@ app.post('/currentData',function(req,res){
         
     })
 });
-//addTransData
+//user addTransData
 app.post('/addTransData',function(req,res){
     var dataa;
     req.on('data',function(chunk){
@@ -210,12 +212,7 @@ app.post('/addTransData',function(req,res){
         // });
         delete testChian;
         res.end("记账成功！");
-
           }
-        // }else{
-        //   res.end("您的当前链数据不正确！请重新拉取最新链！");
-        // }
-        
     })
 });
 app.get('/getNewestData',function(req,res){
@@ -223,6 +220,7 @@ app.get('/getNewestData',function(req,res){
     res.end(JSON.stringify(coinCon));
 })
 
+// socket.io communication
 io.on('connection', function(socket){
     currentSocket = socket;
 //   console.log('a user connected');
