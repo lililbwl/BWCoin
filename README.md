@@ -21,7 +21,7 @@ A BlockChain App base on JavaScript and Browser
 #### Electron-5.0.7
 
 ## 界面展示
-![程序首页](https://github.com/lililbwl/BWCoin/raw/master/public/show.png"程序首页")
+![程序首页](https://github.com/lililbwl/BWCoin/raw/master/public/show.png)
 
 ## 如何run
 1.克隆仓库代码
