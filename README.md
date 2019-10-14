@@ -30,3 +30,6 @@ A BlockChain App base on JavaScript and Browser
   
 3.运行  `npm install`
 4.运行 `node app.js`
+
+## Next Aim
+#### 考虑使用GPU.js/tensorflow.js 对hash计算进行重构，达到计算加速的效果
