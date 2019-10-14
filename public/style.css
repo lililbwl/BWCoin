@@ -36,7 +36,14 @@
         top:0;
         left:0;
       }
-      
+      .logoPagePic{
+        width:120px;
+        height:50px;
+        position:absolute;
+        left:500px;
+        top:35px;
+        box-shadow: 0 0 4px 1px rgb(230,230,230);
+      }
       /* Login Page */
       
       .login {
@@ -103,6 +110,15 @@
         width:100%;
         /* height:100%; */
         overflow: hidden;
+        position:relative;
+    }
+    .logoPic{
+      width:120px;
+      height:50px;
+      position:absolute;
+      right:10px;
+      bottom:10px;
+      box-shadow: 0 0 4px 1px rgb(230,230,230);
     }
     #messages{
         width:100%;
