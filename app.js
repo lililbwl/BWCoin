@@ -133,7 +133,7 @@ app.all('*', function(req, res, next) {
 var BWCoin;
 var coinCon = fs.readFileSync('CB.json','utf-8');
 if(coinCon != ""){
-    BWCoin = coinCon; 
+    BWCoin = coinCon;
 }else{
     BWCoin = BlockChain();
     BWCoin.createTransaction(Transaction('address1', 'address2', 100));
@@ -152,7 +152,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', function(req, res){
-    
   res.sendFile(__dirname + '/index.html');
 });
 app.post('/currentData',function(req,res){
@@ -177,11 +176,9 @@ app.post('/currentData',function(req,res){
         delete testChian;
         res.end("mine success!");
           }
-          
         }else{
           res.end("your data is not Valid!please Check!");
         }
-        
     })
 });
 //user addTransData

@@ -4,7 +4,7 @@
   "description": "the simple blockchain example on nodeJS",
   "main": "app.js",
   "scripts": {
-    "test": "make test"
+    "run": "node app"
   },
   "repository": {
     "type": "git",
