@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <title>BWCoin~Beta(BlockChain)</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/load.css" />
+    <link rel="shortcut icon" href="/favicon.png">
+</head>
+<body>
+    <div class="chatBox">
+        <div class="chatBoxLeft">
+            <h4 id="msge">消息列表！</h4>
+            <ul id="messages"></ul>
+            <form action="">
+                <input id="m" autocomplete="off" placeholder="请输入消息！按回车键发送！" />
+            </form>
+        </div>
+        <div class="chatBoxRight">
+            <h5>注意：私人钱包当前未通过公(私)钥加解密，传输过程可被抓包（私人地址填写后，请记住，丢失不能找回）！</h5>
+            <h5>注意：当前区块链已加入基础记账信息，未创建（创世区块）！当前矿池难度为：5</h5>
+            <h5>注意：左边信息发送将广播所有<span style="font-size: 20px;color:red;">矿主！</span></h5>
+            <h5 id="coinCount">当前钱包地址BWCoin数：</h5>
+            <div style="width:100%;text-align: center">
+                ************************************************************数据校验************************************************************
+            </div>
+            <div class="btnC" onclick="checkIliggle()">验证当前区块链数据</div>
+            <div style="width:100%;text-align: center">
+                ************************************************************记账(挖矿)************************************************************
+            </div>
+            <input type="text" value="" id="addr" placeholder="输入私人(16位字符串)钱包地址！" class="addressInput"
+                style="margin-top:30px;" />
+            <div class="btnC" onclick="startMind()">开始记账(挖矿)</div>
+            <div style="width:100%;text-align: center">
+                ************************************************************发布记账************************************************************
+            </div>
+            <input type="text" id="addAddr" placeholder="输入私人(16位字符串)钱包地址！" class="addressInput" style="margin-top:30px;" />
+            <input type="text" id="postAddr" placeholder="输入接收人(16位字符串)钱包地址！" class="addressInput" style="margin-top:30px;" />
+            <input type="text" id="coinC" placeholder="输入BWCoin~数！(应该小于您钱包BWCoin数)" class="addressInput" style="margin-top:30px;" />
+            <div class="btnC" onclick="release()">发布记账</div>
+        </div>
+        <img src="logo.png" class="logoPic"/>
+    </div>
+    <div class="login page" id="login">
+        <div class="titleIcon">BWCoin~_Beta<span style="font-size: 20px;color:red">blockchain</span></div>
+        <div class="form">
+
+            <h3 class="title">What's your nickname?</h3>
+            <input class="usernameInput" type="text" maxlength="14" />
+        </div>
+        <img src="logo.png" class="logoPagePic"/>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="mine.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
