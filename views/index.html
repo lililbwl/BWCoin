@@ -17,7 +17,7 @@
         </div>
         <div class="chatBoxRight">
             <h5>注意：私人钱包当前未通过公(私)钥加解密，传输过程可被抓包（私人地址填写后，请记住，丢失不能找回）！</h5>
-            <h5>注意：当前区块链已加入基础记账信息，未创建（创世区块）！当前矿池难度为：5</h5>
+            <h5>注意：当前区块链已加入基础记账信息，前矿池难度为：5</h5>
             <h5>注意：左边信息发送将广播所有<span style="font-size: 20px;color:red;">矿主！</span></h5>
             <h5 id="coinCount">当前钱包地址BWCoin数：</h5>
             <div style="width:100%;text-align: center">
@@ -28,14 +28,14 @@
                 ************************************************************记账(挖矿)************************************************************
             </div>
             <input type="text" value="" id="addr" placeholder="输入私人(16位字符串)钱包地址！" class="addressInput"
-                style="margin-top:30px;" />
+                style="margin-top:10px;" />
             <div class="btnC" onclick="startMind()">开始记账(挖矿)</div>
             <div style="width:100%;text-align: center">
                 ************************************************************发布记账************************************************************
             </div>
-            <input type="text" id="addAddr" placeholder="输入私人(16位字符串)钱包地址！" class="addressInput" style="margin-top:30px;" />
-            <input type="text" id="postAddr" placeholder="输入接收人(16位字符串)钱包地址！" class="addressInput" style="margin-top:30px;" />
-            <input type="text" id="coinC" placeholder="输入BWCoin~数！(应该小于您钱包BWCoin数)" class="addressInput" style="margin-top:30px;" />
+            <input type="text" id="addAddr" placeholder="输入私人(16位字符串)钱包地址！" class="addressInput" style="margin-top:10px;" />
+            <input type="text" id="postAddr" placeholder="输入接收人(16位字符串)钱包地址！" class="addressInput" style="margin-top:10px;" />
+            <input type="text" id="coinC" placeholder="输入BWCoin~数！(应该小于您钱包BWCoin数)" class="addressInput" style="margin-top:10px;" />
             <div class="btnC" onclick="release()">发布记账</div>
         </div>
         <img src="logo.png" class="logoPic"/>
