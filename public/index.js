@@ -99,7 +99,15 @@ $(function () {
 
 });
 
-function startMind() {
+function sleep(t) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve();
+        }, t);
+    });
+}
+
+async function startMind() {
     var addr;
     var localAddr = localStorage.getItem('addr');
     if (localAddr) {
@@ -111,7 +119,9 @@ function startMind() {
         alert("地址输入不合法！");
         return;
     }
-    alert("即将开始记账！");
+    alert("开始记账！");
+    $("#loading-box").css("visibility", "visible");
+    await sleep(1000);
     CB.minePendingTransactions(addr);
     localStorage.setItem('data', JSON.stringify(CB.chain));
     localStorage.setItem('trans', JSON.stringify(CB.pendingTransactions));
@@ -123,14 +133,14 @@ function startMind() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-                // document.getElementById('loader').style.display = "none";
+                $("#loading-box").css("visibility", "hidden");
                 localStorage.setItem('addr', addr);
                 if (xhr.responseText == "mine success!") {
-                    socket.emit('chat message', 'System: 当前区块被'+localStorage.getItem("username")+'成功挖出，请刷新浏览器获取最新账本！');
+                    socket.emit('chat message', 'System: 当前区块被' + localStorage.getItem("username") + '成功挖出，请刷新浏览器获取最新账本！');
                     alert("当前区块被挖出!");
-                }else if(xhr.responseText == "please update chain"){
+                } else if (xhr.responseText == "please update chain") {
                     alert("当前链不是最长链！请刷新浏览器获取！");
-                }else{
+                } else {
                     alert("操作有误！");
                 }
 
@@ -159,12 +169,12 @@ function release() {
     var postAddr = document.getElementById("postAddr").value;
     var coinCount = document.getElementById("coinC").value;
     var userCoin = CB.getBalanceOfAddress(formAddr);
-    if (formAddr.length > 15 && postAddr.length > 15 && parseInt(coinCount)<= parseInt(userCoin)) {
+    if (formAddr.length > 15 && postAddr.length > 15 && parseInt(coinCount) <= parseInt(userCoin)) {
         var obj = {};
         obj.fromAddress = formAddr;
         obj.toAddress = postAddr;
         obj.amount = parseInt(coinCount);
-        var nowTrans = "["+trans.substring(1,trans.length-1)+","+ JSON.stringify(obj)+"]";
+        var nowTrans = "[" + trans.substring(1, trans.length - 1) + "," + JSON.stringify(obj) + "]";
         console.log(nowTrans);
         localStorage.setItem('trans', nowTrans);
         var postData = {};
@@ -176,8 +186,8 @@ function release() {
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-                    socket.emit('chat message', 'System: '+localStorage.getItem("username")+'发布了新账单！请刷新浏览器获取最新账本！');
-                        alert(xhr.responseText);
+                    socket.emit('chat message', 'System: ' + localStorage.getItem("username") + '发布了新账单！请刷新浏览器获取最新账本！');
+                    alert(xhr.responseText);
 
                 }
             }
