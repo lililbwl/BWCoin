@@ -5,7 +5,6 @@ $(function () {
     // Initialize variables
     var $window = $(window);
     var clientWidth = document.documentElement.clientWidth;
-    console.log(clientWidth);
     if (clientWidth < 1000) {
         alert("请在电脑端使用！");
     }
@@ -120,6 +119,8 @@ async function startMind() {
         return;
     }
     alert("开始记账！");
+    console.log(Math.floor(Math.random()*3));
+    document.getElementById('loading-img').setAttribute('src',Math.floor(Math.random()*3)+".gif");
     $("#loading-box").css("visibility", "visible");
     await sleep(1000);
     CB.minePendingTransactions(addr);
